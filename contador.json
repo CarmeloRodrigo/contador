@@ -52,9 +52,11 @@
         ],
         "meta": {
             "module": "Contador",
-            "version": "1.0.0",
+            "version": "0.0.1",
             "author": "Crodrigo",
-            "keywords": "contador"
+            "desc": "CONTADOR",
+            "keywords": "contador",
+            "license": "MIT"
         },
         "color": "#E7E7AE",
         "inputLabels": [
@@ -100,6 +102,120 @@
         "y": 180,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "efc5673cda776d9f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8f9a76cafe668178",
+        "type": "inject",
+        "z": "efc5673cda776d9f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "b19ebbfdbfef945d"
+            ]
+        ]
+    },
+    {
+        "id": "67128a0dbd6cf07d",
+        "type": "debug",
+        "z": "efc5673cda776d9f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b19ebbfdbfef945d",
+        "type": "function",
+        "z": "efc5673cda776d9f",
+        "name": "function 1",
+        "func": "contador={}\n\ncontador={\n    reset: false,\n    modo: \"inc\",\n    preset:15,\n    valor:10\n    }\nmsg=contador     \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "f2f783e5be9e287b"
+            ]
+        ]
+    },
+    {
+        "id": "f2f783e5be9e287b",
+        "type": "subflow:b3483ba09d3ed8bd",
+        "z": "efc5673cda776d9f",
+        "name": "C1",
+        "env": [
+            {
+                "name": "valor",
+                "value": "1",
+                "type": "num"
+            },
+            {
+                "name": "Reset",
+                "value": "false",
+                "type": "bool"
+            },
+            {
+                "name": "Nombre",
+                "value": "C1",
+                "type": "str"
+            },
+            {
+                "name": "modo",
+                "value": "dec",
+                "type": "str"
+            },
+            {
+                "name": "Valor",
+                "value": "1",
+                "type": "num"
+            }
+        ],
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "67128a0dbd6cf07d"
+            ]
         ]
     }
 ]
