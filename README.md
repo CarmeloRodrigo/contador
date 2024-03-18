@@ -1,3 +1,5 @@
+NO USAR EN PRODUCCION SOLO ES UNA PRUEBA
+
 Contador de pruebas para node-red
 Parametros de ejemplo para el contador 
 pasarlos mediante bloque de funcion
